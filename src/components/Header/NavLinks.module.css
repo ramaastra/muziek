@@ -1,0 +1,18 @@
+.link {
+  display: block;
+  line-height: 1;
+  padding: rem(8px) rem(4px);
+  text-decoration: none;
+  text-align: right;
+  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
+  font-size: var(--mantine-font-size-md);
+  font-weight: 500;
+
+  @mixin hover {
+    color: var(--mantine-color-white);
+  }
+
+  [data-mantine-color-scheme] &[data-active] {
+    color: var(--mantine-color-white);
+  }
+}

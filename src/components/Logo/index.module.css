@@ -1,0 +1,8 @@
+.logo {
+  cursor: default;
+  user-select: none;
+
+  & span {
+    color: var(--mantine-color-neon-green-filled);
+  }
+}
