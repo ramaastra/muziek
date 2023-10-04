@@ -1,8 +1,38 @@
-# React + Vite
+# How to Run 'Muziek' Locally
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Pre-Requisite
 
-Currently, two official plugins are available:
+1. Go to [RapidAPI](https://rapidapi.com/) and sign in to your account
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2. Go to [Deezer API](https://rapidapi.com/deezerdevs/api/deezer-1/) and look up for your X-RapidAPI-Key
+
+3. Copy the X-RapidAPI-Key value
+
+### Running the Project
+
+1. Clone project's repository
+
+```sh
+git clone https://github.com/ramaastra/muziek.git
+```
+
+2. Go into the project directory
+```sh
+cd muziek/
+```
+
+3. Install all dependencies
+
+```sh
+npm install
+```
+
+4. Rename ```.env.local.example``` file into ```.env.local```
+
+5. Inside the ```.env.local``` file, change the ```<API_KEY>``` with the corresponding X-RapidAPI-Key value that already copied before
+
+6. Run the project
+
+```sh
+npm run dev
+```
