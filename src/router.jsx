@@ -1,8 +1,7 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { Outlet, createBrowserRouter } from 'react-router-dom'
 import MainLayout from './layouts/Main.layout'
 import HomePage from './pages/Home.page'
 import DiscoverPage from './pages/Discover.page'
-import SearchResult from './components/Discover/SearchResult'
 
 const router = createBrowserRouter([
   {
@@ -14,12 +13,12 @@ const router = createBrowserRouter([
         element: <HomePage />
       },
       {
-        path: '/discover',
-        element: <DiscoverPage />,
+        path: 'discover',
+        element: <Outlet />,
         children: [
           {
             index: true,
-            element: <SearchResult />
+            element: <DiscoverPage />
           }
         ]
       }

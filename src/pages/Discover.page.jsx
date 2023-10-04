@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate, useSearchParams } from 'react-router-dom'
+import { useSearchParams } from 'react-router-dom'
 import { Container, Flex, Input, Text, Title } from '@mantine/core'
 import SearchResult from '../components/Discover/SearchResult'
 
@@ -7,13 +7,10 @@ export default function DiscoverPage() {
   const [searchParams, setSearchParams] = useSearchParams('')
   const [searchInput, setSearchInput] = useState(searchParams.get('search'))
 
-  const navigate = useNavigate()
   const handleSearch = (event) => {
     const query = event.target.value
-    setSearchParams(query)
+    setSearchParams({ search: query }, { replace: true })
     setSearchInput(query)
-
-    navigate(`/discover?search=${query}`)
   }
 
   return (
@@ -24,7 +21,7 @@ export default function DiscoverPage() {
         </Title>
         <Input
           placeholder='Track titles, artists, albums'
-          value={searchInput || ''}
+          value={searchParams.get('search') || ''}
           onChange={handleSearch}
           mt='xs'
           radius='xl'

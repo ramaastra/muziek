@@ -11,7 +11,12 @@ const config = {
 export class API {
   static search = async (query) => {
     const searchConfig = { ...config, params: { q: query } }
-    const response = await ofetch('search', searchConfig)
-    return response.data
+
+    try {
+      const response = await ofetch('search', searchConfig)
+      return response.data
+    } catch (error) {
+      console.error(error)
+    }
   }
 }
