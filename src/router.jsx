@@ -2,6 +2,8 @@ import { Outlet, createBrowserRouter } from 'react-router-dom'
 import MainLayout from './layouts/Main.layout'
 import HomePage from './pages/Home.page'
 import DiscoverPage from './pages/Discover.page'
+import DetailPage, { loader as detailLoader } from './pages/Detail.page'
+// import DetailPage from './pages/Detail.page'
 
 const router = createBrowserRouter([
   {
@@ -19,6 +21,11 @@ const router = createBrowserRouter([
           {
             index: true,
             element: <DiscoverPage />
+          },
+          {
+            path: 'song/:id',
+            element: <DetailPage />,
+            loader: detailLoader
           }
         ]
       }

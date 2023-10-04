@@ -27,7 +27,6 @@ export default function DiscoverPage() {
           radius='xl'
           w={250}
           autoFocus={true}
-          onBlur={(event) => event.target.focus()}
         />
       </Flex>
 

@@ -1,8 +1,5 @@
 import { Card, Image, Text, Tooltip } from '@mantine/core'
-
-const getCoverSource = (md5_image) => {
-  return `https://e-cdns-images.dzcdn.net/images/cover/${md5_image}/500x500-000000-80-0-0.jpg`
-}
+import { API } from '../../api'
 
 export default function SongCard({ song }) {
   return (
@@ -12,15 +9,14 @@ export default function SongCard({ song }) {
     >
       <Card
         component='a'
-        href={song.link}
-        target='_blank'
+        href={`/discover/song/${song.id}`}
         w={200}
         padding='md'
         radius='md'
       >
         <Card.Section>
           <Image
-            src={getCoverSource(song.md5_image)}
+            src={API.getSongCover(song.md5_image)}
             alt={song.title}
             style={{ aspectRatio: 1/1 }}
           />
