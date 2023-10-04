@@ -23,11 +23,12 @@ export default function DiscoverPage() {
           Search Our Library
         </Title>
         <Input
-          placeholder='Track titles, artists'
+          placeholder='Track titles, artists, albums'
           value={searchInput || ''}
           onChange={handleSearch}
           mt='xs'
           radius='xl'
+          w={250}
           autoFocus={true}
           onBlur={(event) => event.target.focus()}
         />
