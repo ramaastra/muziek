@@ -14,7 +14,7 @@ export default function AlbumSongs({ album }) {
       <Table>
         <Table.Tbody>
           <Table.Tr align='center'>
-            <Table.Td colSpan={4}>
+            <Table.Td colSpan={4} py={20}>
               <Text size='20px' span fw={700}>{album.title}</Text>
               <Text span> – Setlist</Text>
             </Table.Td>
