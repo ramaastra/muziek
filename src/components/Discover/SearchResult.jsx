@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Flex } from '@mantine/core'
+import { Flex, Text } from '@mantine/core'
 import { API } from '../../api'
 import SongCard from './SongCard'
 
@@ -14,9 +14,12 @@ export default function SearchResult({ searchInput }) {
   
   return (
     <Flex justify='center' gap={20} wrap='wrap'>
-      {songs.map((song) => {
-        return <SongCard key={song.id} song={song} />
-      })}
+      {songs.length ?
+        songs.map((song) => {
+          return <SongCard key={song.id} song={song} />
+        }) :
+        <Text>Sorry, but there are no songs found..</Text>
+      }
     </Flex>
   )
 }
